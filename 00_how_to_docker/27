@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+docker ps
+
+docker-machine ssh manager "docker service logs $(docker ps | grep redis |  head -n1 | cut -d ' ' -f1) --follow"
+
+#docker logs --follow $(docker ps | grep redis |  head -n1 | cut -d " " -f1)
