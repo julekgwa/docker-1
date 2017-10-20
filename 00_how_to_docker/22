@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+WORKER=$(docker-machine ssh Char 'docker swarm join-token manager' | tail -n +3)
+
+docker-machine ssh Aiur $WORKER
