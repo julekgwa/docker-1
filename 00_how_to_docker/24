@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+docker-machine ssh Char "docker service create -e RABBITMQ_DEFAULT_USER='julekgwa' -e RABBITMQ_DEFAULT_PASS='passwd' --name orbital-command --log-driver journald --network overmind rabbitmq"
