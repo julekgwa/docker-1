@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-docker ps
+#docker service ps
 
-docker-machine ssh manager "docker service logs $(docker ps | grep redis |  head -n1 | cut -d ' ' -f1) --follow"
+docker-machine ssh Char "docker service logs $(docker service ps engineering-bay -f "name=engineering-bay.1" -q) --follow"
 
 #docker logs --follow $(docker ps | grep redis |  head -n1 | cut -d " " -f1)
